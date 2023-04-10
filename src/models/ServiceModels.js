@@ -6,9 +6,10 @@ const ObjectId = Schema.ObjectId;
 const ServiceSchema = new Schema({
   id: ObjectId,
   Nome: String,
-  Horarios: Date,
-  Data: Date,
+  Horarios: String,
+  Data: String,
   NomePaciente: String,
+  // idUser: String,
 });
 
 const ServiceModels = mongoose.model("Services", ServiceSchema);

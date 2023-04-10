@@ -6,11 +6,11 @@ const ObjectId = Schema.ObjectId;
 
 const ProductSchema = new Schema({
   Id: ObjectId,
-  Nome: String,
-  CPF: Number,
-  RG: Number,
-  CEP: Number,
-  Nascimento: Date,
+  NomeProduct: String,
+  Cpf: Number,
+  Rg: Number,
+  Cep: Number,
+  Nascimento: String,
   NumeroCasa: Number,
   Rua: String,
   Bairro: String,

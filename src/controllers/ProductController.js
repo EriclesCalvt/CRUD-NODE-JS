@@ -3,17 +3,18 @@ const ProductModels = require("../models/ProductModels");
 
 class ProductController {
   async store(req, res) {
-    const { title, description, price } = req.body;
-    const ProductIsAlreadyExist = await ProductModels.findOne({ title });
+    const { Cpf, Cep, NomeProduct } = req.body;
+    const ProductIsAlreadyExist = await ProductModels.findOne({ Cpf });
 
+    console.log(req.body)
     if (ProductIsAlreadyExist) {
       return res.status(400).json({ message: "Title is already exist !" });
     }
 
-    if (!title || !description || !price) {
+    if (!Cpf || !Cep || !NomeProduct) {
       return res
         .status(400)
-        .json({ message: "Title, Description and price is required !" });
+        .json({ message: "CPF, RG and Nome is required !" });
     }
     const createdProduct = await ProductModels.create(req.body);
 

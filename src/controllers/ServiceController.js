@@ -3,14 +3,14 @@ const ServiceModels = require("../models/ServiceModels");
 
 class ServiceController {
   async store(req, res) {
-    const { Nome, Horario, Data, NomePaciente } = req.body;
+    const { Nome, Horarios, Data, NomePaciente } = req.body;
     const ProductIsAlreadyExist = await ServiceModels.findOne({ Nome });
 
     if (ProductIsAlreadyExist) {
       return res.status(400).json({ message: "Title is already exist !" });
     }
 
-    if (!Nome || !Horario || !Data || !NomePaciente) {
+    if (!Nome || !Horarios || !Data || !NomePaciente) {
       return res
         .status(400)
         .json({ message: "Nome, Description and price is required !" });
