@@ -6,7 +6,7 @@ class ProductController {
     const { Cpf, Cep, NomeProduct } = req.body;
     const ProductIsAlreadyExist = await ProductModels.findOne({ Cpf });
 
-    console.log(req.body)
+    console.log(req.body);
     if (ProductIsAlreadyExist) {
       return res.status(400).json({ message: "Title is already exist !" });
     }

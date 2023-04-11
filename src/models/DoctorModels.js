@@ -5,11 +5,11 @@ const ObjectId = Schema.ObjectId;
 
 const DoctorSchema = new Schema({
   id: ObjectId,
+  Nome: String,
   CPF: Number,
   CRM: Number,
-  Nome: String,
-  DataNascimento: Date,
-  Speciality: String,
+  DataNascimento: String,
+  Especialidade: String,
 });
 
 const DoctorModels = mongoose.model("doctor", DoctorSchema);
