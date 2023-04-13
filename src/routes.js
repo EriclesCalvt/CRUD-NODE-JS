@@ -16,7 +16,7 @@ routes.get("/Products/:id", ProductController.show);
 routes.get("/Products", ProductController.index);
 routes.post("/Products/Insert", ProductController.store);
 
-//Routes Services:
+//Routes Services
 routes.delete("/Services/:id", ServiceController.destroy);
 routes.put("/Services/:id", ServiceController.update);
 routes.get("/Services/:id", ServiceController.show);
