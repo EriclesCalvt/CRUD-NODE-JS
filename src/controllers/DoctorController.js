@@ -1,4 +1,4 @@
-// Controladores dos médicos (doctor)
+//Controladores dos médicos (doctor)
 const DoctorModels = require("../models/DoctorModels");
 
 class DoctorController {
