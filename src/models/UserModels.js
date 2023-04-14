@@ -5,9 +5,9 @@ const ObjectId = Schema.ObjectId;
 
 const ProductSchema = new Schema({
   Id: ObjectId,
-  email: String,
+  nome: String,
   password: Number,
-  querie: Array,
+  //querie: Array,
 });
 
 const UserModels = mongoose.model("user", ProductSchema);

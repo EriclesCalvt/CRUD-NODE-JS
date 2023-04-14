@@ -1,21 +1,19 @@
-//Controladores dos médicos (doctor)
+// controladores do doutor
 const DoctorModels = require("../models/DoctorModels");
 
 class DoctorController {
   async store(req, res) {
-    const { Nome, CPF, CRM } = req.body;
-    const ProductIsAlreadyExist = await DoctorModels.findOne({ CPF });
-
+    const { Name, cpf, crm, DataNascimento, Especialidade } = req.body;
+    const ProductIsAlreadyExist = await DoctorModels.findOne({ cpf });
     console.log(req.body);
-
     if (ProductIsAlreadyExist) {
-      return res.status(400).json({ message: "CPF is already exist !" });
+      return res.status(400).json({ message: "Title is already exist !" });
     }
 
-    if (!Nome || !CPF || !CRM) {
+    if (!Name || !cpf || !crm || !DataNascimento) {
       return res
         .status(400)
-        .json({ message: "CPF, CRM and Nome is required !" });
+        .json({ message: "Nome, Description and price is required !" });
     }
     const createdDoctor = await DoctorModels.create(req.body);
 
@@ -51,7 +49,7 @@ class DoctorController {
       await DoctorModels.findByIdAndUpdate(id, req.body);
       return res.status(200).json({ message: "Doctor Updated !" });
     } catch (error) {
-      return res.status().json({ message: "Failed to update Doctor !" });
+      return res.status().json({ message: "Failed to update doctor !" });
     }
   }
 

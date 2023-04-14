@@ -5,7 +5,7 @@ class ServiceController {
   async store(req, res) {
     const { Nome, Horarios, Data, NomePaciente } = req.body;
     const ProductIsAlreadyExist = await ServiceModels.findOne({ Nome });
-
+    console.log(req.body);
     if (ProductIsAlreadyExist) {
       return res.status(400).json({ message: "Title is already exist !" });
     }

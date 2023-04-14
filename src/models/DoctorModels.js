@@ -5,9 +5,9 @@ const ObjectId = Schema.ObjectId;
 
 const DoctorSchema = new Schema({
   id: ObjectId,
-  Nome: String,
-  CPF: Number,
-  CRM: Number,
+  Name: String,
+  cpf: Number,
+  crm: Number,
   DataNascimento: String,
   Especialidade: String,
 });

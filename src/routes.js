@@ -28,9 +28,15 @@ routes.delete("/Doctor/:id", DoctorController.destroy);
 routes.put("/Doctor/:id", DoctorController.update);
 routes.get("/Doctor/:id", DoctorController.show);
 routes.get("/Doctor", DoctorController.index);
-routes.post("/Doctor/Insert", DoctorController.store);
+routes.post("/doctors/Insert", DoctorController.store);
 
 // Routes users:
-routes.post("/user/cadastro", UserController);
+
+// routes.post("/user/cadastro", UserController);
+routes.post("/User/Insert", UserController.store);
+routes.get("/User/:id", UserController.show);
+routes.put("/User/:id", UserController.update);
+routes.delete("/User/:id", UserController.destroy);
+routes.get("/User", UserController.index);
 
 module.exports = routes;
