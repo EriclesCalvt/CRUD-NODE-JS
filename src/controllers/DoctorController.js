@@ -3,14 +3,14 @@ const DoctorModels = require("../models/DoctorModels");
 
 class DoctorController {
   async store(req, res) {
+    console.log(req.body);
     const { Name, cpf, crm, DataNascimento, Especialidade } = req.body;
     const ProductIsAlreadyExist = await DoctorModels.findOne({ cpf });
-    console.log(req.body);
     if (ProductIsAlreadyExist) {
       return res.status(400).json({ message: "Title is already exist !" });
     }
 
-    if (!Name || !cpf || !crm || !DataNascimento) {
+    if (!Name || !cpf || !crm || !DataNascimento || !Especialidade) {
       return res
         .status(400)
         .json({ message: "Nome, Description and price is required !" });
