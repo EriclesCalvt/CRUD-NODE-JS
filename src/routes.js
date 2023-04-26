@@ -6,6 +6,7 @@ const ProductController = require("./controllers/ProductController");
 const ServiceController = require("./controllers/ServiceController");
 const DoctorController = require("./controllers/DoctorController");
 
+
 routes.get("/health", (req, res) => {
   return res.status(200).json({ message: "Server is on" });
 });

@@ -18,7 +18,7 @@ class UserController {
     }
     const createdUser = await UserModels.create(req.body);
 
-    return res.status(200).json(createdUser);
+    return res.status(200).json({"data": createdUser, "message": "ok"});
   }
 
   async index(req, res) {
