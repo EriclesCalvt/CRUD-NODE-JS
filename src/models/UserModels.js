@@ -5,8 +5,8 @@ const ObjectId = Schema.ObjectId;
 
 const ProductSchema = new Schema({
   Id: ObjectId,
-  nome: String,
-  password: Number,
+  nome: { type: String, required: true },
+  password: { type: String, required: true },
   //querie: Array,
 });
 

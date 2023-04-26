@@ -1,6 +1,7 @@
 const { Router } = require("express");
+const { login } = require("./controllers/LoginController");
 const routes = Router();
-const UserController = require("./controllers/UserController.js");
+const UserController = require("./controllers/UserController");
 const ProductController = require("./controllers/ProductController");
 const ServiceController = require("./controllers/ServiceController");
 const DoctorController = require("./controllers/DoctorController");
@@ -37,6 +38,7 @@ routes.post("/User/Insert", UserController.store);
 routes.get("/User/:id", UserController.show);
 routes.put("/User/:id", UserController.update);
 routes.delete("/User/:id", UserController.destroy);
-routes.get("/User", UserController.index);
+//routes.post("/User", UserController.login);
+routes.post("/User", login);
 
 module.exports = routes;

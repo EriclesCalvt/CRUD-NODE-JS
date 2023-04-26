@@ -1,11 +1,6 @@
-// function UserController(req, res) {
-//   console.log(req.body);
-//   res.status(200).json("deu bom");
-// }
-
-// module.exports = UserController;
-// controladores do serviço
+const User = require("../models/UserModels");
 const UserModels = require("../models/UserModels");
+const bodyParser = require("body-parser");
 
 class UserController {
   async store(req, res) {
@@ -28,7 +23,6 @@ class UserController {
 
   async index(req, res) {
     const user = await UserModels.find();
-
     return res.status(200).json(user);
   }
 
