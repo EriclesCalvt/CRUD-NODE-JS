@@ -8,17 +8,16 @@ class UserController {
     const ProductIsAlreadyExist = await UserModels.findOne({ nome });
     console.log(req.body);
     if (ProductIsAlreadyExist) {
-      return res.status(400).json({ message: "email is already exist !" });
+      return res.status(400).json({ message: "nome is already exist !" });
     }
-
     if (!nome || !password) {
       return res
         .status(400)
-        .json({ message: "Email and password is required !" });
+        .json({ message: "Nome and password is required !" });
     }
     const createdUser = await UserModels.create(req.body);
 
-    return res.status(200).json({"data": createdUser, "message": "ok"});
+    return res.status(200).json({ data: createdUser, message: "ok" });
   }
 
   async index(req, res) {
