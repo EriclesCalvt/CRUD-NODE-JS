@@ -7,6 +7,6 @@ const cors = require("cors");
 app.use(cors());
 loaders.start();
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server is running");
 });
