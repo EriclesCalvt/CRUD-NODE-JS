@@ -5,11 +5,7 @@ const UserController = require("./controllers/UserController");
 const ProductController = require("./controllers/ProductController");
 const ServiceController = require("./controllers/ServiceController");
 const DoctorController = require("./controllers/DoctorController");
-
-
-routes.get("/health", (req, res) => {
-  return res.status(200).json({ message: "Server is on" });
-});
+const ConsultsController = require("./controllers/ConsultsController");
 
 // Routes Products:
 routes.delete("/Products/:id", ProductController.destroy);
@@ -30,7 +26,7 @@ routes.delete("/Doctor/:id", DoctorController.destroy);
 routes.put("/Doctor/:id", DoctorController.update);
 routes.get("/Doctor/:id", DoctorController.show);
 routes.get("/Doctor", DoctorController.index);
-routes.post("/doctors/Insert", DoctorController.store);
+routes.post("/Doctor/Insert", DoctorController.store);
 
 // Routes users:
 
@@ -41,5 +37,12 @@ routes.put("/User/:id", UserController.update);
 routes.delete("/User/:id", UserController.destroy);
 //routes.post("/User", UserController.login);
 routes.post("/User", login);
+
+routes.get("/health", (req, res) => {
+  return res.status(200).json({ message: "Server is on" });
+});
+
+//Routes Queries:
+routes.post("/Querie/Insert", ConsultsController.store);
 
 module.exports = routes;
