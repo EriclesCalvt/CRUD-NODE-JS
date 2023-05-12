@@ -44,5 +44,9 @@ routes.get("/health", (req, res) => {
 
 //Routes Queries:
 routes.post("/Querie/Insert", ConsultsController.store);
+routes.get("/Querie", ConsultsController.index);
+routes.get("/Querie/:id", ConsultsController.show);
+routes.put("/Querie/:id", ConsultsController.update);
+routes.delete("/Querie/:id", ConsultsController.destroy);
 
 module.exports = routes;

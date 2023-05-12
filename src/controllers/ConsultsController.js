@@ -14,18 +14,6 @@ class ConsultsController {
       dataNascimento,
     } = req.body;
     console.log(req.body);
-    if (
-      !data ||
-      !horario ||
-      !medico ||
-      !especialidade ||
-      !nome ||
-      !cpf ||
-      !rg ||
-      !dataNascimento
-    ) {
-      return res.status(400).json({ message: "Your querie require your data" });
-    }
     const createdConsult = await ConsultsModels.create(req.body);
 
     return res.status(200).json(createdConsult);
