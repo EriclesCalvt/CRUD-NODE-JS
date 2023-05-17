@@ -14,8 +14,8 @@ const ConsultsSchema = new Schema({
   },
   paciente: {
     nome: String,
-    rg: Number,
-    cpf: Number,
+    rg: String,
+    cpf: String,
     dataNascimento: String,
   },
 });
