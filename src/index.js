@@ -1,13 +1,13 @@
 const app = require("./app");
 const loaders = require("./loaders");
 const cors = require("cors");
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 
 
 app.use(cors());
 loaders.start();
 
-app.listen(port , () => {
+app.listen(PORT , () => {
   console.log("Server is running");
 });
