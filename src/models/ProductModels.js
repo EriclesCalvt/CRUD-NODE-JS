@@ -7,15 +7,15 @@ const ObjectId = Schema.ObjectId;
 const ProductSchema = new Schema({
   Id: ObjectId,
   NomeProduct: String,
-  Cpf: Number,
-  Rg: Number,
-  Cep: Number,
+  Cpf: String,
+  Rg: String,
+  Cep: String,
   Nascimento: String,
-  NumeroCasa: Number,
+  NumeroCasa: String,
   Rua: String,
   Bairro: String,
   Cidade: String,
-  Telefone: Number,
+  Telefone: String,
   Consulta: String,
 });
 
