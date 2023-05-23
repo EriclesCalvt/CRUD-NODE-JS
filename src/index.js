@@ -10,5 +10,4 @@ loaders.start();
 
 app.listen(PORT , () => {
   console.log("Server is running");
-  alert("Online")
 });
