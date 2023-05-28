@@ -1,13 +1,15 @@
 const UserModels = require("../models/UserModels");
 const bcrypt = require("bcrypt");
+const SECRET = 'ericlesprogrammer@gmail.com'
+const jwt = require("jsonwebtoken");
+// const { Router } = require("express");
 
 async function login(req, res) {
   const { email, password } = req.body;
 
-  try {
+  try { 
     // buscar pelo usuário correspondente ao nome fornecido
     const user = await UserModels.findOne({ nome: email, password: password });
-
     console.log(user);
     if (user === null) {
       // o nome fornecido não corresponde a um usuário válido, mostrar uma mensagem de erro
@@ -22,7 +24,7 @@ async function login(req, res) {
       res.status(200).json({ message: "ok" });
     } else {
       // a senha está incorreta, mostrar uma mensagem de erro
-      res.status(400).json({ message: "asdfasd Nome ou senha incorretos" });
+      res.status(400).json({ message: "Nome ou senha incorretos" });
     }
   } catch (err) {
     console.error(err);
