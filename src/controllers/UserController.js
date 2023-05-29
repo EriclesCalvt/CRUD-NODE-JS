@@ -20,10 +20,15 @@ class UserController {
     return res.status(200).json({ data: createdUser, message: "ok" });
   }
 
-  async index(req, res) {
-    const user = await UserModels.find();
-    return res.status(200).json(user);
-  }
+  // async index(req, res) {
+  // //   const user = await UserModels.find();
+  // //   if(!user){
+  // //     return res.status(404).json({message: "User not found !"})
+  // //   }else{
+  // //     return res.status(200).json(user);
+  // //   }
+  // }
+
 
   async show(req, res) {
     try {
@@ -68,4 +73,4 @@ class UserController {
   }
 }
 
-module.exports = new UserController();
+module.exports = (new UserController());

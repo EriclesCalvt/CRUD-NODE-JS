@@ -6,7 +6,7 @@ const ProductController = require("./controllers/ProductController");
 const ServiceController = require("./controllers/ServiceController");
 const DoctorController = require("./controllers/DoctorController");
 const ConsultsController = require("./controllers/ConsultsController");
-
+const index = require("./controllers/index")
 // Routes Products:
 routes.delete("/Products/:id", ProductController.destroy);
 routes.put("/Products/:id", ProductController.update);
@@ -31,10 +31,13 @@ routes.post("/Doctor/Insert", DoctorController.store);
 // Routes users:
 
 // routes.post("/user/cadastro", UserController);
+routes.get("/User/Index", index.index);
 routes.post("/User/Insert", UserController.store);
 routes.get("/User/:id", UserController.show);
 routes.put("/User/:id", UserController.update);
 routes.delete("/User/:id", UserController.destroy);
+
+
 //routes.post("/User", UserController.login);
 routes.post("/User", login);
   
