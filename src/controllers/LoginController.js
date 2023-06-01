@@ -5,11 +5,11 @@ const jwt = require("jsonwebtoken");
 // const { Router } = require("express");
 
 async function login(req, res) {
-  const { email, password } = req.body;
-
+  const { nome, password } = req.body;
+  console.log(req.body)
   try { 
     // buscar pelo usuário correspondente ao nome fornecido
-    const user = await UserModels.findOne({ nome: email, password: password });
+    const user = await UserModels.findOne({ nome: nome, password: password });
     console.log(user);
     if (user === null) {
       // o nome fornecido não corresponde a um usuário válido, mostrar uma mensagem de erro

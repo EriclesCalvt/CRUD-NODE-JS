@@ -1,5 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
 const SECRET = 'ericlesprogrammer@gmail.com'
 const UserModels = require("../models/UserModels");
 const jwt = require("jsonwebtoken");
@@ -24,7 +23,7 @@ router.post('/auth/login', async (req, res) => {
         expiresIn: 60 * 60 * 2 // 2 horas
     })
 
-    if (!token) return res.send({ Error: 'user not found' }).status(400);
+    if (!token) return res.send({ Error: 'token not created' }).status(400);
 
     return res.send({ User: user, token: token }).status(200);
 });
