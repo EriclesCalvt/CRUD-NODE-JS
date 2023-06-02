@@ -16,6 +16,7 @@ routes.post("/Products/Insert", ProductController.store);
 
 //Routes Services
 routes.delete("/Services/:id", ServiceController.destroy);
+routes.delete("/Services/:Nome", ServiceController.destroy);
 routes.put("/Services/:id", ServiceController.update);
 routes.get("/Services/:id", ServiceController.show);
 routes.get("/Services", ServiceController.index);
