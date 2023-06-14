@@ -29,9 +29,9 @@ class ProductController {
 
   async show(req, res) {
     try {
-      const { id } = req.params;
+      const { NomeProduct } = req.params;
 
-      const product = await ProductModels.findById(id);
+      const product = await ProductModels.findById(NomeProduct);
       console.log(product);
 
       if (!product) {
