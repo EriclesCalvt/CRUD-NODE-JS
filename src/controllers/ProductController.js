@@ -30,18 +30,20 @@ class ProductController {
   async show(req, res) {
     try {
       const { NomeProduct } = req.params;
-
-      const product = await ProductModels.findById(NomeProduct);
+  
+      const product = await ProductModels.findOne({ NomeProduct }); // Correção aqui
+  
       console.log(product);
-
+  
       if (!product) {
         return res.status(404).json({ message: "Product does not exist" });
       }
       return res.status(200).json(product);
     } catch (error) {
-      return res.status(404).json({ message: "Failed to list product" });
+      return res.status(500).json({ message: "Failed to list your product" }); // Alterado o status para 500 para indicar um erro interno do servidor
     }
   }
+  
 
   async update(req, res) {
     try {
