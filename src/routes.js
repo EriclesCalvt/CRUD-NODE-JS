@@ -42,7 +42,7 @@ routes.delete("/User/:id", UserController.destroy);
 //routes.post("/User", UserController.login);
 routes.post("/User", login);
   
-routes.get("https://crud-node-js-dun.vercel.app/health", (req, res) => {
+routes.get("/health", (req, res) => {
   return res.status(200).json({ message: "Server is on" });
 });
 
