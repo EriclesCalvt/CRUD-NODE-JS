@@ -47,15 +47,15 @@ class ProductController {
 
   async update(req, res) {
     try {
-      const { id } = req.params;
-
-      await ProductModels.findByIdAndUpdate(id, req.body);
-      return res.status(200).json({ message: "Product Updated !" });
+      const { NomeProduct } = req.params;
+  
+      await ProductModels.findOneAndUpdate({ NomeProduct }, req.body);
+      return res.status(200).json({ message: "Product Updated!" });
     } catch (error) {
-      return res.status().json({ message: "Failed to update product !" });
+      return res.status(500).json({ message: "Failed to update product!" });
     }
   }
-
+  
   async destroy(req, res) {
     try {
       const { id } = req.params;

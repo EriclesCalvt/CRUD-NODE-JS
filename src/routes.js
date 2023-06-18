@@ -9,7 +9,7 @@ const ConsultsController = require("./controllers/ConsultsController");
 const index = require("./controllers/index")
 // Routes Products:
 routes.delete("/Products/:id", ProductController.destroy);
-routes.put("/Products/:id", ProductController.update);
+routes.put("/Products/:NomeProduct", ProductController.update);
 routes.get("/Products/:NomeProduct", ProductController.show);
 routes.get("/Products", ProductController.index);
 routes.post("/Products/Insert", ProductController.store);
